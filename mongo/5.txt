@@ -1,0 +1,9 @@
+The collections "customer" and "product" is already correct (normalized-ish), but the collection "orders_w_lines" can be improved.
+
+It can be separated to "order" and "basket."
+
+"order" can contain only the order information and also have a basket reference.
+
+"basket" can reference to the order and have a list of products.
+
+It will be easier to query product-related information.
