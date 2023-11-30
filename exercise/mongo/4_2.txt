@@ -1,0 +1,18 @@
+db.customer.aggregate([
+  {
+    $group: {
+      _id: "$customer_zipcode",
+      number_customers: { $sum: 1 }
+    }
+  },
+  {
+    $match: {
+      number_customers: { $gt: 1 }
+    }
+  },
+  {
+    $sort: {
+      number_customers: -1
+    }
+  }
+])
